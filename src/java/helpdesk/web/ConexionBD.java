@@ -17,25 +17,22 @@ import helpdesk.model.data.*;
 public class ConexionBD  implements ServletContextListener {
 
     public void contextInitialized(ServletContextEvent sce) {
-        try {
-            Conexion miConexion = new Conexion();
+            Conexion miConexion = Conexion.getInstanceConexion();
             ServletContext sc = sce.getServletContext();
             miConexion.setBaseDatos(sc.getInitParameter("baseDatos"));
             miConexion.setClave(sc.getInitParameter("clave"));
             miConexion.setPuerto(sc.getInitParameter("puerto"));
             miConexion.setServidor(sc.getInitParameter("servidor"));
             miConexion.setUsuario(sc.getInitParameter("usuario"));
-            
-            miConexion.setConexion();
-            //throw new UnsupportedOperationException("Not supported yet.");
+        try {
+            miConexion.abrirConexion();
         } catch (SQLException ex) {
             Logger.getLogger(ConexionBD.class.getName()).log(Level.SEVERE, null, ex);
         }
+            
     }
 
     public void contextDestroyed(ServletContextEvent sce) {
     
     }
-
-
 }

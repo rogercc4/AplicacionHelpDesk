@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>SATCh - SISTEMA HELP DESK</title>
+<style type="text/css">
+<!--
+body {
+	background-color: #FFFFFF;
+	font-family:Arial, Helvetica, sans-serif;
+}
+h3 {
+	color: #FFFFFF;
+	background-color: #006699;
+	padding: 5px;
+}
+p {
+	font-size:0.9em;
+	text-align: justify;
+}
+p.resaltado {
+color:#FF0000;
+font-style:italic;
+}
+p.resaltado2 {
+	padding:5px;
+	background-color:#CAE4FF;
+}
+table {
+	width: 650px;
+	font-size: 12px;
+}
+table tr td {
+	padding: 5px;
+}
+fieldset {
+	margin: 5px;
+	padding:5px;
+	border: 1px solid #333333;
+	width: 700px;
+}
+fieldset legend {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #003366;
+	padding:5px; 
+}
+-->
+</style>
+</head>
+<body>
+
+<h3>SATCh - Servicio de Administraci&oacute;n Tributaria de Chiclayo</h3> 
+<h4>Se le ha enviado una solicitud para que le de el visto bueno. </h4>
+<fieldset>
+<legend>Detalle de la solicitud</legend>
+<table width="100%">
+  <tr>
+    <td width="17%"><strong>Generado por</strong></td>
+    <td colspan="3">###USUARIO_SOLICITUD###</td>
+  </tr>
+  <tr>
+    <td><strong>Tipo de Solic.</strong></td>
+    <td width="44%">###TIPO_SOLICITUD###</td>
+    <td width="9%"><strong>Fecha</strong></td>
+    <td width="30%">###FECHA_SOLICITUD###</td>
+  </tr>
+  <tr>
+    <td><strong>Area</strong></td>
+    <td>###AREA_SOLICITUD###</td>
+    <td><strong>Cargo</strong></td>
+    <td>###CARGO_SOLICITUD###</td>
+  </tr>
+  <tr>
+    <td><strong>Asunto</strong></td>
+    <td colspan="3">###ASUNTO_SOLICITUD###</td>
+  </tr>
+</table>
+</fieldset>
+
+<p>&nbsp;</p>
+<p>Para poder dar atenci&oacute;n a esta solicitud usted debe ingresar al sistema desde <a href="<?php echo URL_WEB . "serviciosLinea/portada/index.php?pagina=" . base64_encode('consultaContribuyente.php') ; ?>" target="_blank">aqu&iacute;</a></p>
+<p>Si el link de arriba no funciona, ingrese a la siguiente direcci&oacute;n:</p>
+
+<p >#URL_DESTINO#</p>
+<p ></p>
+<p class="resaltado"><strong><em>NOTA: Este correo ha sido generado autom&aacute;ticamente, por lo tanto usted no debe responder este mensaje </em></strong>...</p>
+</body>
+</html>

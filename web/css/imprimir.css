@@ -1,0 +1,48 @@
+/* CSS Document */
+table.resultados caption {
+	background-color:#CCCCCC;
+	font-size:0.8em;
+	text-align:center;
+	padding:6px;
+	border: 1px solid #333333;
+	color: #000000;
+	font-weight: bold;
+}
+table.resultados thead th {
+	font-weight: bold;
+	font-size: 0.7em;
+	padding:8px;
+	color: #000000;
+	background-color: #CCCCCC;
+}
+table.resultados tfoot tr td {
+	color: #333333;
+	background-color: #F5F5F5;
+	font-style: italic;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	font-size: 0.7em;
+}
+table.resultados tr td {
+	background-color: #FFFFFF;
+	font-size: 0.7em;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #333333;
+	padding:5px;
+	color: #000000;
+}
+table.resultados tr td.resaltado {
+	font-weight: bold;
+}
+.izquierda {
+text-align:left; 
+}
+.derecha {
+text-align:right; 
+}
+.centro {
+text-align:center; 
+}

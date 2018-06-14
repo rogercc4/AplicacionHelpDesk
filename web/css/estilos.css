@@ -1,0 +1,395 @@
+/*****************************************************
+Hoja de estilo CSS para servicios en Linea :
+--------------------------------------------
+
+Autor				: Roger A. Contreras Corrales.
+Ultima modificación : 05/11/2010 05:25 p.m.
+*******************************************************/
+/*Parte Cabecera*/
+#cabecera {
+	font-family:Arial, Helvetica, sans-serif;
+	background-color:#006699;
+	color:#FFFFFF;
+	background-image:url(logosatch.gif);
+	background-repeat:no-repeat;
+	background-position:5px center;
+	height:60px;
+	background-attachment: fixed;
+}
+#cabecera p.logo {
+	margin-left:50px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	margin-top:5px;
+	font-size:0.75em;
+	font-weight: bold;
+	margin-bottom:0px;
+}
+#cabecera p.usuario {
+	margin-right:5px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:0.7em;
+	font-weight: bold;
+	margin-top:-15px;
+	position: absolute;
+	right: 30px;
+}
+
+/*Parte Izquierda*/
+#parteIzquierda {
+background-color:#EAEAEA;
+}
+#parteIzquierda ul.menu  {
+font-family: Arial;
+list-style: none;
+margin: 5px;
+padding: 0;
+}
+#parteIzquierda ul.menu li.titulo  {
+	FONT-FAMILY: verdana;
+	font-size: 0.7em;
+	padding:7px;
+	color: #333333;
+	background-color: #CCCCCC;
+	border: 1px solid #333333;
+	text-align: center;
+	vertical-align: middle;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+#parteIzquierda ul.menu li a, ul.menu li a:link, ul.menu li a:visited  {
+	FONT-FAMILY: verdana;	
+	font-size: 0.7em;
+	display:block;
+	color: #333333;
+	background-color: #C5EAFA;
+	text-decoration:none;
+	border: 1px outset #6475a8;
+	padding: 5px;
+	margin:0px;
+}
+#parteIzquierda ul.menu li a:hover {
+	FONT-FAMILY: verdana;	
+	font-size: 0.7em;
+	display:block;
+	color: #FF0000;
+	background-color: #C5EAFA;
+	text-decoration:none;
+	border: 1px outset #6475a8;
+	padding: 5px;
+	margin:0px;
+}
+
+
+/*Parte Detalle*/
+#parteDetalle {
+	font-family:Arial, Helvetica, sans-serif;
+}
+#parteDetalle h3  {
+	color: #FFFFFF;
+	background-color: #003F5E;
+	padding: 5px;
+	font-size: 1em;
+	font-weight: bold;
+}
+#parteDetalle h4  {
+	color: #660000;
+	border-bottom-width: 2px;
+	border-bottom-style: dotted;
+	border-bottom-color: #666666;
+	padding-bottom: 5px;
+	padding-left:5px;
+	font-weight: bold;
+	font-size: 0.9em;
+	background-color: #EEEEEE;
+}
+#parteDetalle p {font-size: 12px;}
+#parteDetalle form {
+font-family: Verdana, Arial, Helvetica, sans-serif;
+font-size: 11px;
+}
+#parteDetalle fieldset {
+	margin: 5px;
+	padding:5px;
+	border: 1px solid #333333;
+}
+#parteDetalle fieldset legend {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #003366;
+	padding:5px; 
+}
+#parteDetalle form label {
+	font-weight: bold;
+}
+#parteDetalle form input.botonSearch {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #000000;
+	background-color: #EEEEEE;
+	height: 30px;
+	background-position: 2px center;
+	border: 1px solid #666666;
+	text-align: center;
+	vertical-align: middle;
+	cursor: hand;
+	background-image: url(icon-find.png);
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	width: 80px;
+	margin-left: 10px;
+}
+#parteDetalle form input.botonGenerico {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #000000;
+	background-color: #EEEEEE;
+	height: 30px;
+	background-position: 2px center;
+	border: 1px solid #666666;
+	text-align: center;
+	vertical-align: middle;
+	cursor: hand;	
+	margin-left: 10px;
+}
+#parteDetalle form input.botonSave {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #000000;
+	background-color: #EEEEEE;
+	height: 30px;
+	background-position: 5px center;
+	border: 1px solid #333333;
+	text-align: center;
+	vertical-align: middle;
+	cursor: hand;
+	background-image: url(save-icon.png);
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	width: 100px;
+	margin-left: 10px;
+}
+#parteDetalle form input.botonLogin {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #000000;
+	background-color: #EEEEEE;
+	height: 30px;
+	background-position: 5px center;
+	border: 1px solid #333333;
+	text-align: center;
+	vertical-align: middle;
+	cursor: hand;
+	background-image: url(ico_login.png);
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	width: 130px;
+	margin-left: 10px;
+}
+#parteDetalle form input.botonRegresar {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #000000;
+	background-color: #EEEEEE;
+	height: 30px;
+	background-position: 2px center;
+	border: 1px solid #666666;
+	text-align: center;
+	vertical-align: middle;
+	cursor: hand;
+	background-image: url(regresar.png);
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	width: 100px;
+}
+#parteDetalle form input.botonImprimir {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #000000;
+	background-color: #EEEEEE;
+	height: 30px;
+	background-position: 2px center;
+	border: 1px solid #666666;
+	text-align: center;
+	vertical-align: middle;
+	cursor: hand;
+	background-image: url(icon_print.gif);
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	width: 100px;
+}
+#parteDetalle form input.botonCancelar {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #000000;
+	background-color: #EEEEEE;
+	height: 30px;
+	background-position: 2px center;
+	border: 1px solid #666666;
+	text-align: center;
+	vertical-align: middle;
+	cursor: hand;
+	background-image: url(icon_cancel.png);
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	width: 100px;
+}
+#parteDetalle form input.botonRestablecer {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #000000;
+	background-color: #EEEEEE;
+	height: 30px;
+	background-position: 5px center;
+	border: 1px solid #333333;
+	text-align: center;
+	vertical-align: middle;
+	cursor: hand;
+	background-image: url(ico_refresh.png);
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	width: 100px;
+}
+#parteDetalle form input.botonExcel {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #000000;
+	background-color: #EEEEEE;
+	height: 30px;
+	background-position: 5px center;
+	border: 1px solid #333333;
+	text-align: center;
+	vertical-align: middle;
+	cursor: hand;
+	background-image: url(ico_xls.gif);
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	width: 150px;
+}
+#parteDetalle table {
+	width: 100%;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+#parteDetalle table tr td {
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	padding: 5px;
+	margin: 0px;
+}
+#parteDetalle table tr.impar  {
+	background-color: #FFFFFF;
+}
+#parteDetalle table tr.par  {
+	background-color: #ECFBFF;
+}
+#parteDetalle table tfoot tr td {
+	background-color: #006699;
+	border: 1px solid #666666;
+	color: #FFFFFF;
+}
+#parteDetalle table thead tr th {
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	padding: 5px;
+	color: #FFFFFF;
+	background-color: #006699;
+}
+#parteDetalle .izquierda {
+text-align:left; 
+}
+#parteDetalle .derecha {
+text-align:right; 
+}
+#parteDetalle .centro {
+text-align:center; 
+}
+#parteDetalle .borde4 {
+	border: 1px solid #333333;
+}
+#parteDetalle .fondo1 {
+	background-color: #FFFFCC;
+}
+#parteDetalle span.formatoPDF {
+	background-image:url(ico_pdf.gif);
+	background-repeat:no-repeat;
+	padding-left: 20px;
+	padding-bottom: 10px;
+}
+#parteDetalle span.formatoXLS {
+	background-image:url(ico_xls.gif);
+	background-repeat:no-repeat;
+	padding-left: 20px;
+	padding-bottom: 10px;
+}
+#parteDetalle span.formatoHTML {
+	background-image:url(ico_html.png);
+	background-repeat:no-repeat;
+	padding-left: 20px;
+	padding-bottom: 10px;
+}
+#parteDetalle span.formatoDetail {
+	background-image:url(ico_detail.gif);
+	background-repeat:no-repeat;
+	padding-left: 20px;
+	padding-bottom: 10px;
+}
+
+button span {
+	font-size: 11px;
+}
+
+.textError {
+	color: #000000;
+	background-color: #FFE8E8;
+	border: thin solid #FF0000;
+}
+
+#tabsDetalleSolicitud, #tabsGestionTareas, #tabsGestionMensajes, #tabsConsultarMisReq {
+font-size:11px;
+}
+
+div.mensajeDialogo {
+font-size:11px;
+}
+
+
+table.tblMensajes thead {
+	color: #FFFFFF;
+	background-color: #003366;
+	font-weight: bold;
+}
+
+table.tblMensajes, table.tblMensajes tbody tr td  {
+	margin: 0px;
+	padding: 0px;
+}
+
+table.tblMensajes tbody tr td  {
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #000000;
+}
+
+table.detalleTramite {
+font-family: Verdana, Arial, Helvetica, sans-serif;
+font-size: 11px;
+color: #000000;
+background-color: #E6F2FF;
+}
+
+table.detalleTramite tr td {
+padding: 7px;
+border-bottom-width: 1px;
+border-bottom-style: solid;
+border-bottom-color: #003366;
+}
+
+table.detalleTramite tr td label.titulo {
+font-weight: bold;
+background-color: #FFFF99;
+}

@@ -26,6 +26,8 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import com.sun.org.apache.xml.internal.serialize.OutputFormat;
 import com.sun.org.apache.xml.internal.serialize.XMLSerializer;
+import helpdesk.model.pattern.prototype.FactoryPrototypeBuscador;
+import helpdesk.model.pattern.prototype.TipoDeBusqueda;
 
 /** @pdOid d756a27e-160a-4427-a95f-e0a6ccbbef3e */
 public class ControlTrabajador extends javax.servlet.http.HttpServlet {
@@ -1509,6 +1511,7 @@ public class ControlTrabajador extends javax.servlet.http.HttpServlet {
       Trabajador miTrab = (Trabajador)miSesion.getAttribute("sTrabajador");
       Cargo miCargo = (Cargo)miSesion.getAttribute("sCargo");
 
+      /*
       Buscador miBusqSolicReg = new Buscador();
       miBusqSolicReg.getSolicRegistradas(miTrab, miCargo);
 
@@ -1541,23 +1544,43 @@ public class ControlTrabajador extends javax.servlet.http.HttpServlet {
 
       Buscador miBusqPendEnvConformidad = new Buscador();
       miBusqPendEnvConformidad.getSolicPendEnvConformidad(miTrab, miCargo);
+      */
+      
+      FactoryPrototypeBuscador factoryPrototypeBuscador = (FactoryPrototypeBuscador)miSesion.getAttribute("factoryPrototypeBuscador_SESION");
+      
+      Object ultimaConecion = miSesion.getAttribute("lastConnection_SESION");
+      java.util.Date fechaActual = new java.util.Date(); 
+      long tiempoActual = fechaActual.getTime();
+      
+            if (  ultimaConecion == null   ) {
+                miSesion.setAttribute("lastConnection_SESION", tiempoActual);
+                factoryPrototypeBuscador = new FactoryPrototypeBuscador(miTrab, miCargo);
+                miSesion.setAttribute("factoryPrototypeBuscador_SESION", factoryPrototypeBuscador);
+            } else {
+                long tiempoEnSesion =  (Long)ultimaConecion;
+                long diferencia = tiempoActual - tiempoEnSesion;
+                
+                if ( diferencia > 60000 ) {
+                    factoryPrototypeBuscador = new FactoryPrototypeBuscador(miTrab, miCargo);
+                    miSesion.setAttribute("factoryPrototypeBuscador_SESION", factoryPrototypeBuscador);
+                }
+                
+            }
 
+      request.setAttribute("reqRegistradas", factoryPrototypeBuscador.getPrototypeBuscador(TipoDeBusqueda.SOLICITUDES_REGISTRADA));
+      request.setAttribute("reqProcAtencion", factoryPrototypeBuscador.getPrototypeBuscador(TipoDeBusqueda.EN_PROCESO_ATENCION_REQUERIMIENTOS));
+      request.setAttribute("reqAsignados", factoryPrototypeBuscador.getPrototypeBuscador(TipoDeBusqueda.ASIGNADAS));
+      request.setAttribute("reqDarConformidad", factoryPrototypeBuscador.getPrototypeBuscador(TipoDeBusqueda.ENVIAR_PARA_CONFORMIDAD));
+      request.setAttribute("reqDevueltos", factoryPrototypeBuscador.getPrototypeBuscador(TipoDeBusqueda.DEVUELTAS));
+      request.setAttribute("reqRechazados", factoryPrototypeBuscador.getPrototypeBuscador(TipoDeBusqueda.RECHAZADAS));
 
-      request.setAttribute("reqRegistradas", miBusqSolicReg);
-      request.setAttribute("reqProcAtencion", miBusqReqProcAtencion);
-      request.setAttribute("reqAsignados", miBusqReqAsignados);
-      request.setAttribute("reqDarConformidad", miBusqReqDarConformidad);
-      request.setAttribute("reqDevueltos", miBusqReqDevueltos);
-      request.setAttribute("reqRechazados", miBusqReqRechazados);
-
-      request.setAttribute("pendDarVistoBueno", miBusqPendDarVistoBueno);
-      request.setAttribute("pendParaAtender", miBusqPendParaAtender);
-      request.setAttribute("pendDerivadas", miBusqPendDerivadas);
-      request.setAttribute("pendProcAtencion", miBusqPendProcAtencion);
-      request.setAttribute("pendEnviarConformidad", miBusqPendEnvConformidad);
-
+      request.setAttribute("pendDarVistoBueno", factoryPrototypeBuscador.getPrototypeBuscador(TipoDeBusqueda.DAR_VISTO_BUENO));
+      request.setAttribute("pendParaAtender", factoryPrototypeBuscador.getPrototypeBuscador(TipoDeBusqueda.PARA_ATENDER));
+      request.setAttribute("pendDerivadas", factoryPrototypeBuscador.getPrototypeBuscador(TipoDeBusqueda.DERIVADAS));
+      request.setAttribute("pendProcAtencion", factoryPrototypeBuscador.getPrototypeBuscador(TipoDeBusqueda.EN_PROCESO_ATENCION_PENDIENTES));
+      request.setAttribute("pendEnviarConformidad", factoryPrototypeBuscador.getPrototypeBuscador(TipoDeBusqueda.PARA_DAR_CONFORMIDAD));
+      
       request.getRequestDispatcher("inicio.jsp").forward(request, response);
-
    }
 
    /** Permite cambiar la clave del trabajador

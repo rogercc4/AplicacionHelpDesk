@@ -1561,6 +1561,7 @@ public class ControlTrabajador extends javax.servlet.http.HttpServlet {
                 long diferencia = tiempoActual - tiempoEnSesion;
                 
                 if ( diferencia > 60000 ) {
+                    miSesion.setAttribute("lastConnection_SESION", tiempoActual);
                     factoryPrototypeBuscador = new FactoryPrototypeBuscador(miTrab, miCargo);
                     miSesion.setAttribute("factoryPrototypeBuscador_SESION", factoryPrototypeBuscador);
                 }
